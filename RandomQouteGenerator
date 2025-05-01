@@ -1,0 +1,41 @@
+package com.mycompany.randomqoutesgenerator;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Image;
+
+public class RandomQoutesGenerator extends JFrame {
+    private JLabel imageLabel;
+
+    public RandomQoutesGenerator() {
+        setTitle("Random Qoute Generator");
+        Container container = getContentPane();
+        container.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+        imageLabel = new JLabel();
+        container.add(imageLabel);
+
+        displayImage();
+        
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+    }
+
+    private void displayImage() {
+        String imagePath = "C:\\Users\\Arliana Pascual\\Downloads\\494357063_1126081262618383_7552793638603133344_n.jpg";
+        ImageIcon imageIcon = new ImageIcon(imagePath);
+        Image Simage = imageIcon.getImage().getScaledInstance(300, 200, Image.SCALE_DEFAULT); 
+        imageIcon = new ImageIcon(Simage);
+
+        imageLabel.setIcon(imageIcon);
+    }
+
+    public static void main(String[] args) {
+        RandomQoutesGenerator rndmQteGnrt = new RandomQoutesGenerator();
+        rndmQteGnrt.  setVisible(true);
+    }
+}
